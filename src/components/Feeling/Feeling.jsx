@@ -15,12 +15,12 @@ function Feeling() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    let [feeling, setFeeling] = useState({ feeling: " " })
+    let [feeling, setFeeling] = useState(0)
 
     const addFeeling = (event) => {
         console.log(feeling)
         setFeeling({
-            ...feeling,
+            // ...feeling,
             feeling: event.target.value
         })
 
@@ -28,19 +28,9 @@ function Feeling() {
 
 
 
-    const addSupport = (event) => {
-        setResponses({
-            ...responses,
-            support: event.target.value
-        })
-    }
 
-    const addComments = (event) => {
-        setResponses({
-            ...responses,
-            comments: event.target.value
-        })
-    }
+
+
 
     const dispatchFeeling = (event) => {
         event.preventDefault();
@@ -54,35 +44,20 @@ function Feeling() {
 
     return (
         <Router>
-            <>
+            <Route path='/' exact>
+                <form onSubmit={(event) => dispatchFeeling(event)}>
+                    <h3>How are you feeling today?</h3>
+                    <input
+                        type="number" min="0" max="10"
+                        placeholder="Feeling?"
+                        onChange={addFeeling}
+                    />
+                    {/* <Link to="/understanding"> */}
+                    <button type="submit" >Next</button>
+                    {/* </Link> */}
+                </form>
 
-                <Route path='/' exact>
-                    <form onSubmit={(event) => dispatchFeeling(event)}>
-                        <h3>How are you feeling today?</h3>
-                        <input
-                            type="text"
-                            placeholder="Feeling?"
-                            onChange={addFeeling}
-                        />
-                        {/* <Link to="/understanding"> */}
-                        <button type="submit" >Next</button>
-                        {/* </Link> */}
-                    </form>
-
-                </Route>
-
-
-
-
-                <Route path="/comments" exact>
-                    <h3>Any comments you want to leave?</h3>
-                    <input type="text" placeholder="Comments?" onChange={addComments} />
-                    <Link to="/review">
-                        <button type="submit">Next</button>
-                    </Link>
-                </Route>
-
-            </>
+            </Route>
         </Router >
     )
 }

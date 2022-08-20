@@ -9,6 +9,9 @@ function Support() {
 
     let [support, setSupport] = useState({ support: " " })
 
+    const dispatch = useDispatch();
+    const history = useHistory();
+
 
     const addSupport = (event) => {
         setSupport({
@@ -24,7 +27,7 @@ function Support() {
             type: 'ADD_SUPPORT',
             payload: support
         });
-        history.push('/support')
+        history.push('/comments')
     }
     return (
 
@@ -32,7 +35,7 @@ function Support() {
             <Route path="/support" exact>
                 <form onSubmit={(event) => dispatchSupport(event)}>
                     <h3>How well are you being supported?</h3>
-                    <input type="text"
+                    <input type="number" min="0" max="10"
                         placeholder="Support?" onChange={addSupport} />
                     <button type="submit">Next</button>
                 </form>

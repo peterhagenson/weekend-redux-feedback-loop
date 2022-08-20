@@ -18,17 +18,35 @@ return state;
 }
 
 const understanding = (state = {}, action) => {
-    if (action.type === 'ADD_FEELING') {
+    if (action.type === 'ADD_UNDERSTANDING') {
         console.log(action.payload);
         return action.payload;
     }
 return state;
 }
 
+const support = (state = ' ', action) => {
+    if (action.type === 'ADD_SUPPORT') {
+        console.log(action.payload);
+        return action.payload;
+    }
+return state;
+}
+
+const comments = (state = {}, action) => {
+    if (action.type === 'ADD_COMMENTS') {
+        console.log(action.payload);
+        return action.payload;
+}
+return state;
+}
+
 const store = createStore(
     combineReducers({
         feeling,
-        understanding
+        understanding,
+        support,
+        comments
     }), applyMiddleware(logger)
 );
 

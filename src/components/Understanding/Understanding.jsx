@@ -34,7 +34,7 @@ function Understanding() {
             <Route path='/understanding' exact>
                 <form onSubmit={(event) => dispatchUnderstanding(event)}>
                     <h3>How well are you understanding the content?</h3>
-                    <input type="text" placeholder="Understanding?" onChange={addUnderstanding}
+                    <input type="number" min="0" max="10" placeholder="Understanding?" onChange={addUnderstanding}
                     />
                     <button type="submit">Next</button>
                 </form>
