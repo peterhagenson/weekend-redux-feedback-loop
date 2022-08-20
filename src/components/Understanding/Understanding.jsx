@@ -40,6 +40,7 @@ function Understanding() {
                     <button type="submit">Next</button>
                 </form>
             </Route>
+            <Link to="/">Back</Link>
         </Router>
     )
 

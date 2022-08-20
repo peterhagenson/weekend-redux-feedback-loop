@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
@@ -46,6 +46,7 @@ function Review() {
                 <h1>Comments: {comments.comments}</h1> */}
                 <button onClick={toServer}>Submit</button>
             </Route>
+            <Link to="/comments">Back</Link>
         </Router >
     )
 }

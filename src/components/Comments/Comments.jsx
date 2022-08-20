@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -41,6 +41,7 @@ function Comments() {
                     <button type="submit">Next</button>
                 </form>
             </Route>
+            <Link to="/support">Back</Link>
         </Router>
     )
 }

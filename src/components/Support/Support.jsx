@@ -40,6 +40,7 @@ function Support() {
                     <button type="submit">Next</button>
                 </form>
             </Route>
+            <Link to="/understanding">Back</Link>
         </Router>
 
     )
