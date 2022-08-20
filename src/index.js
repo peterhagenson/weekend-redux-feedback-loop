@@ -13,6 +13,8 @@ const feeling = (state = {}, action) => {
     if (action.type === 'ADD_FEELING') {
         console.log(action.payload);
         return action.payload;
+    } else if(action.type === 'CLEAR') {
+        return {}
     }
 return state;
 }
@@ -21,14 +23,18 @@ const understanding = (state = {}, action) => {
     if (action.type === 'ADD_UNDERSTANDING') {
         console.log(action.payload);
         return action.payload;
+    } else if(action.type === 'CLEAR') {
+        return {}
     }
 return state;
 }
 
-const support = (state = ' ', action) => {
+const support = (state = {}, action) => {
     if (action.type === 'ADD_SUPPORT') {
         console.log(action.payload);
         return action.payload;
+    } else if(action.type === 'CLEAR') {
+        return {}
     }
 return state;
 }
@@ -37,6 +43,8 @@ const comments = (state = {}, action) => {
     if (action.type === 'ADD_COMMENTS') {
         console.log(action.payload);
         return action.payload;
+} else if(action.type === 'CLEAR') {
+    return {}
 }
 return state;
 }

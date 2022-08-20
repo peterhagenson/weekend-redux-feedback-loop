@@ -1,12 +1,15 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import axios from 'axios';
 
 
 
 function Review() {
+
+    const history = useHistory();
 
     const understanding = useSelector(store => store.understanding)
     const feeling = useSelector(store => store.feeling)
@@ -30,6 +33,7 @@ function Review() {
         }).catch((err) => {
             console.error(err)
         })
+        history.push('/success');
     }
 
 
