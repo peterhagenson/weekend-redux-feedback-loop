@@ -40,10 +40,10 @@ function Review() {
         <Router>
             <Route path="/review" exact>
                 <h1>Review Your Feedback</h1>
-                {/* <h1>Feeling: {feeling.feeling}</h1>
-                <h1>Understanding: {understanding.understanding}</h1>
-                <h1>Support: {support.support}</h1>
-                <h1>Comments: {comments.comments}</h1> */}
+                <h1>Feeling: {surveyResponse.feeling.feeling}</h1>
+                <h1>Understanding: {surveyResponse.understanding.understanding}</h1>
+                <h1>Support: {surveyResponse.support.support}</h1>
+                <h1>Comments: {surveyResponse.comments.comments}</h1>
                 <button onClick={toServer}>Submit</button>
             </Route>
             <Link to="/comments">Back</Link>
