@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux'
+
 import axios from 'axios';
 
 
@@ -19,13 +20,16 @@ function Review() {
             support: support.support,
             comments: comments.comments
         }
+        console.log(feedbackToServer)
         axios({
             method: 'POST',
-            url
+            url: '/feedback',
+            data: feedbackToServer
+        }).then((response) => {
+            console.log('response from server', response);
+        }).catch((err) => {
+            console.error(err)
         })
-
-
-        console.log(feedbackToServer)
     }
 
 

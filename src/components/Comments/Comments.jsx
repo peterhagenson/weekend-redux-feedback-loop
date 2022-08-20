@@ -20,7 +20,8 @@ function Comments() {
         })
     }
 
-    const dispatchComments = () => {
+    const dispatchComments = (event) => {
+        event.preventDefault();
         console.log(comments);
         dispatch({
             type: "ADD_COMMENTS",
