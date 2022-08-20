@@ -11,17 +11,15 @@ function Review() {
 
     const history = useHistory();
 
-    const understanding = useSelector(store => store.understanding)
-    const feeling = useSelector(store => store.feeling)
-    const support = useSelector(store => store.support)
-    const comments = useSelector(store => store.comments)
+    const surveyResponse = useSelector(store => store.surveyResponse)
 
     const toServer = () => {
+        console.log(surveyResponse)
         let feedbackToServer = {
-            feeling: feeling.feeling,
-            understanding: understanding.understanding,
-            support: support.support,
-            comments: comments.comments
+            feeling: surveyResponse.feeling.feeling,
+            understanding: surveyResponse.understanding.understanding,
+            support: surveyResponse.support.support,
+            comments: surveyResponse.comments.comments
         }
         console.log(feedbackToServer)
         axios({
@@ -34,6 +32,7 @@ function Review() {
             console.error(err)
         })
         history.push('/success');
+
     }
 
 
@@ -41,10 +40,10 @@ function Review() {
         <Router>
             <Route path="/review" exact>
                 <h1>Review Your Feedback</h1>
-                <h1>Feeling: {feeling.feeling}</h1>
+                {/* <h1>Feeling: {feeling.feeling}</h1>
                 <h1>Understanding: {understanding.understanding}</h1>
                 <h1>Support: {support.support}</h1>
-                <h1>Comments: {comments.comments}</h1>
+                <h1>Comments: {comments.comments}</h1> */}
                 <button onClick={toServer}>Submit</button>
             </Route>
         </Router >

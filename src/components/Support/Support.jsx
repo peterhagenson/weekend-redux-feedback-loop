@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 function Support() {
 
-    let [support, setSupport] = useState({ support: " " })
+    let [support, setSupport] = useState('')
 
     const dispatch = useDispatch();
     const history = useHistory();

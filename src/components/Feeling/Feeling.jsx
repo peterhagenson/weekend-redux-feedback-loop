@@ -15,13 +15,12 @@ function Feeling() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    let [feeling, setFeeling] = useState(0)
+    let [feeling, setFeeling] = useState('')
 
     const addFeeling = (event) => {
         console.log(feeling)
         if (event.target.value) {
             setFeeling({
-                // ...feeling,
                 feeling: event.target.value
             })
         } else {

@@ -9,12 +9,11 @@ function Understanding() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    let [understanding, setUnderstanding] = useState({ understanding: " " })
+    let [understanding, setUnderstanding] = useState('')
 
 
     const addUnderstanding = (event) => {
         setUnderstanding({
-            ...understanding,
             understanding: event.target.value
         })
     }
@@ -24,6 +23,7 @@ function Understanding() {
         console.log('test');
         dispatch({
             type: 'ADD_UNDERSTANDING',
+
             payload: understanding
         });
         history.push('/support')

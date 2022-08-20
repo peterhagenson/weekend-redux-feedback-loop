@@ -11,11 +11,10 @@ function Comments() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const [comments, setComments] = useState(' ');
+    const [comments, setComments] = useState('');
 
     const addComments = (event) => {
         setComments({
-
             comments: event.target.value
         })
     }
@@ -25,6 +24,7 @@ function Comments() {
         console.log(comments);
         dispatch({
             type: "ADD_COMMENTS",
+
             payload: comments
         })
         history.push('/review');
