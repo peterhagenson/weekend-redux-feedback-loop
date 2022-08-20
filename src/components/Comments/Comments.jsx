@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom';
 function Comments() {
 
     const dispatch = useDispatch();
-    ////const useHistory = useHistory();
+    const history = useHistory();
 
     const [comments, setComments] = useState(' ');
 
@@ -26,6 +26,7 @@ function Comments() {
             type: "ADD_COMMENTS",
             payload: comments
         })
+        history.push('/review');
     }
 
 

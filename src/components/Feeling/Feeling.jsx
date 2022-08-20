@@ -19,18 +19,16 @@ function Feeling() {
 
     const addFeeling = (event) => {
         console.log(feeling)
-        setFeeling({
-            // ...feeling,
-            feeling: event.target.value
-        })
-
+        if (event.target.value) {
+            setFeeling({
+                // ...feeling,
+                feeling: event.target.value
+            })
+        } else {
+            alert('error'
+            )
+        }
     }
-
-
-
-
-
-
 
     const dispatchFeeling = (event) => {
         event.preventDefault();
@@ -51,6 +49,7 @@ function Feeling() {
                         type="number" min="0" max="10"
                         placeholder="Feeling?"
                         onChange={addFeeling}
+                        required
                     />
                     {/* <Link to="/understanding"> */}
                     <button type="submit" >Next</button>

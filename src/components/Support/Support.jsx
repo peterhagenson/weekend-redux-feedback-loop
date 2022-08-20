@@ -36,7 +36,7 @@ function Support() {
                 <form onSubmit={(event) => dispatchSupport(event)}>
                     <h3>How well are you being supported?</h3>
                     <input type="number" min="0" max="10"
-                        placeholder="Support?" onChange={addSupport} />
+                        placeholder="Support?" onChange={addSupport} required />
                     <button type="submit">Next</button>
                 </form>
             </Route>

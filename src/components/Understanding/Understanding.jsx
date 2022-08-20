@@ -35,6 +35,7 @@ function Understanding() {
                 <form onSubmit={(event) => dispatchUnderstanding(event)}>
                     <h3>How well are you understanding the content?</h3>
                     <input type="number" min="0" max="10" placeholder="Understanding?" onChange={addUnderstanding}
+                        required
                     />
                     <button type="submit">Next</button>
                 </form>
