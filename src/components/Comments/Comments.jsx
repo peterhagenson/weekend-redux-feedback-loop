@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 
 
@@ -38,13 +40,18 @@ function Comments() {
     return (
         <Router>
             <Route path="/comments" exact>
-                <form onSubmit={(event) => dispatchComments(event)}>
-                    <h3>Any comments you want to leave?</h3>
-                    <TextField type="text" size="small" placeholder="Comments?" onChange={addComments} />
-                    <Button variant="outlined" type="submit" >Next</Button>
-                </form>
+                <Card sx={{ width: 500 }} className="card">
+                    <CardContent>
+                        <form onSubmit={(event) => dispatchComments(event)}>
+                            <h3>Any comments you want to leave?</h3>
+                            <TextField multiline label="Comments" sx={{ width: 300 }} variant="standard" type="text" size="small" onChange={addComments} />
+                            <Button variant="outlined" type="submit" >Next</Button>
+                        </form>
+                    </CardContent>
+                </Card>
+                <Link underline="hover" href="#/support">Back</Link>
             </Route>
-            <Link underline="hover" href="#/support">Back</Link>
+
         </Router>
     )
 }

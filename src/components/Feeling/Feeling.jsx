@@ -6,11 +6,21 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Rating from '@mui/material/Rating';
 
 // create onclicks that add to state variable, dispatch variable to reducer
 
 
-
+// const bull = (
+//     <Box
+//         component="span"
+//         sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+//     >
+//         •
+//     </Box>
+// );
 
 function Feeling() {
 
@@ -42,24 +52,39 @@ function Feeling() {
     }
 
     return (
-        <Router>
-            <Route path='/' exact>
-                <form onSubmit={(event) => dispatchFeeling(event)}>
-                    <h3>How are you feeling today?</h3>
-                    <TextField
-                        size="small"
-                        type="number" min="0" max="10"
-                        placeholder="Feeling?"
-                        onChange={addFeeling}
-                        required
-                    />
-                    {/* <Link to="/understanding"> */}
-                    <Button variant="outlined" type="submit" >Next</Button>
-                    {/* </Link> */}
-                </form>
 
+        <Router>
+
+            <Route path='/' exact>
+                <Card sx={{ width: 300 }} className="card">
+                    <CardContent >
+                        <form onSubmit={(event) => dispatchFeeling(event)}>
+                            <h3>How are you feeling today?</h3>
+                            {/* <TextField
+                                size="small"
+                                type="number" min="0" max="10"
+                                label="Feeling?"
+                                variant="standard"
+                                onChange={addFeeling}
+                                required
+                            /> */}
+                            <Rating
+                                name="simple-controlled"
+                                max={5}
+                                // value={feeling}
+                                onChange={addFeeling}
+                            />
+
+
+                            <Button variant="outlined" type="submit" >Next</Button>
+
+                        </form>
+                    </CardContent>
+                </Card >
             </Route>
+
         </Router >
+
     )
 }
 

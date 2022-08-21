@@ -6,6 +6,10 @@ import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Rating from '@mui/material/Rating';
+
 
 
 function Support() {
@@ -36,14 +40,24 @@ function Support() {
 
         <Router>
             <Route path="/support" exact>
-                <form onSubmit={(event) => dispatchSupport(event)}>
-                    <h3>How well are you being supported?</h3>
-                    <TextField type="number" size="small" min="0" max="10"
-                        placeholder="Support?" onChange={addSupport} required />
-                    <Button variant="outlined" type="submit" >Next</Button>
-                </form>
+                <Card sx={{ width: 300 }} className="card">
+                    <CardContent>
+                        <form onSubmit={(event) => dispatchSupport(event)}>
+                            <h3>How well are you being supported?</h3>
+                            {/* <TextField type="number" variant="standard" size="small" min="0" max="10"
+                                label="Support?" onChange={addSupport} required /> */}
+                            <Rating
+                                name="simple-controlled"
+                                max={5}
+                                // value={feeling}
+                                onChange={addSupport}
+                            />
+                            <Button variant="outlined" type="submit" >Next</Button>
+                        </form>
+                    </CardContent>
+                </Card>
+                <Link underline="hover" href="#/understanding">Back</Link>
             </Route>
-            <Link underline="hover" href="#/understanding">Back</Link>
         </Router>
 
     )

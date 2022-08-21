@@ -4,6 +4,8 @@ import { useState } from "react"
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 function Success() {
 
@@ -22,9 +24,12 @@ function Success() {
 
         <Router>
             <Route path="/success" exact>
-                <h1>Submission Successful!</h1>
-                <Button variant="outlined" onClick={resetReducers}>Leave Another Review</Button>
-
+                <Card sx={{ width: 500 }} className="card">
+                    <CardContent>
+                        <h1>Submission Successful!</h1>
+                        <Button variant="outlined" onClick={resetReducers}>Leave Another Review</Button>
+                    </CardContent>
+                </Card>
 
             </Route>
         </Router>

@@ -6,6 +6,8 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore, combineReducers, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
+
+
 //import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 const surveyResponse = (state ={feeling: '',understanding: '', support: '', comments: ''}, action) => {

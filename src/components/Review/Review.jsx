@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 import axios from 'axios';
 
@@ -41,16 +43,20 @@ function Review() {
     return (
         <Router>
             <Route path="/review" exact>
-                <h1>Review Your Feedback</h1>
-                <h1>Feeling: {surveyResponse.feeling.feeling}</h1>
-                <h1>Understanding: {surveyResponse.understanding.understanding}</h1>
-                <h1>Support: {surveyResponse.support.support}</h1>
-                <h1>Comments: {surveyResponse.comments.comments}</h1>
-                <Button onClick={toServer} variant="outlined" type="submit" >Next</Button>
+                <Card sx={{ width: 500 }} className="card">
+                    <CardContent>
+                        <h1>Review Your Feedback</h1>
+                        <h1>Feeling: {surveyResponse.feeling.feeling}</h1>
+                        <h1>Understanding: {surveyResponse.understanding.understanding}</h1>
+                        <h1>Support: {surveyResponse.support.support}</h1>
+                        <h1>Comments: {surveyResponse.comments.comments}</h1>
+                        <Button onClick={toServer} variant="outlined" type="submit" >Next</Button>
+                    </CardContent>
+                </Card>
             </Route>
-            <div>
-                <Link underline="hover" href="#/comments">Back</Link>
-            </div>
+
+            <Link underline="hover" href="#/comments">Back</Link>
+
         </Router >
 
     )
