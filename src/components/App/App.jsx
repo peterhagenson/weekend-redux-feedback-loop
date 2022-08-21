@@ -7,6 +7,7 @@ import Support from '../Support/Support.jsx'
 import Review from '../Review/Review.jsx'
 import Comments from '../Comments/Comments.jsx'
 import Success from '../Success/Success.jsx'
+import Admin from '../Admin/Admin.jsx'
 import { HashRouter as Router, Route, } from 'react-router-dom';
 import Link from '@mui/material/Link';
 import '@fontsource/roboto/300.css';
@@ -14,10 +15,9 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import "@fontsource/roboto";
-import Typography from "@mui/material"
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { black, silver } from '@mui/material/colors';
-import { useTheme } from '@mui/material/styles';
+
+
 
 const theme = createTheme({
   palette: {
@@ -79,6 +79,9 @@ function App() {
           </Route>
           <Route>
             <Success path="/success" />
+          </Route>
+          <Route>
+            <Admin path="/admin" />
           </Route>
 
         </div>
