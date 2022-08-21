@@ -15,5 +15,19 @@ router.get('/', (req, res) => {
     })
 })
 
+router.delete('/:id', (req, res) => {
+    console.log(req.params)
+let reqId = req.params.id;
+console.log('Delete request for id', reqId)
+const queryText = `SELECT * FROM feedback WHERE id=$1;`;
+pool.query(queryText, [reqId])
+.then((result) => {
+    res.send(result.rows);
+}).catch((error) => {
+    console.log('Error making database query DELETE', error);
+    res.sendStatus(500)
+})
+})
+
 
 module.exports = router;

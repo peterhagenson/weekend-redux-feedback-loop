@@ -8,8 +8,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import { useState } from 'react';
+import Button from '@mui/material/Button';
 
 function Admin() {
 
@@ -32,6 +32,20 @@ function Admin() {
         })
     }
 
+    const deleteRow = () => {
+        // let key = event.target.id
+
+        axios({
+            method: 'DELETE',
+            url: `/admin/${key}`
+        }).then((response) => {
+            console.log('deleted!');
+            getFeedback();
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
+
 
     return (
         <Router>
@@ -41,20 +55,25 @@ function Admin() {
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell>Feeling</TableCell>
-                                <TableCell>Understanding</TableCell>
-                                <TableCell>Support</TableCell>
-                                <TableCell>Comments</TableCell>
+                                <TableCell align="right">Feeling</TableCell>
+                                <TableCell align="right">Understanding</TableCell>
+                                <TableCell align="right">Support</TableCell>
+                                <TableCell align="right">Comments</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {feedback.map((row) => (
                                 <TableRow
-                                    key={row.id}>
-                                    <TableCell>{row.feeling}</TableCell>
-                                    <TableCell>{row.understanding}</TableCell>
-                                    <TableCell>{row.support}</TableCell>
-                                    <TableCell>{row.comments}</TableCell>
+                                    key={row.id}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                                    <TableCell align="right">{row.feeling}</TableCell>
+                                    <TableCell align="right">{row.understanding}</TableCell>
+                                    <TableCell align="right">{row.support}</TableCell>
+                                    <TableCell align="right">{row.comments}</TableCell>
+                                    <TableCell>
+                                        {/* <Button onClick={deleteRow(key)}>Delete</Button> */}
+                                        <Button onClick={deleteRow}>Delete Row</Button>
+                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
