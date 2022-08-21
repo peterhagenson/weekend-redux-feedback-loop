@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { useState } from "react"
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 function Success() {
 
@@ -22,7 +23,9 @@ function Success() {
         <Router>
             <Route path="/success" exact>
                 <h1>Submission Successful!</h1>
-                <button onClick={resetReducers}>Leave Another Review</button>
+                <Button variant="outlined" onClick={resetReducers}>Leave Another Review</Button>
+
+
             </Route>
         </Router>
     )

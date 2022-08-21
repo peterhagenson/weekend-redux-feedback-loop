@@ -1,8 +1,11 @@
 import React from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, } from 'react-router-dom';
 import { useState } from "react"
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
 
 
 function Support() {
@@ -35,12 +38,12 @@ function Support() {
             <Route path="/support" exact>
                 <form onSubmit={(event) => dispatchSupport(event)}>
                     <h3>How well are you being supported?</h3>
-                    <input type="number" min="0" max="10"
+                    <TextField type="number" size="small" min="0" max="10"
                         placeholder="Support?" onChange={addSupport} required />
-                    <button type="submit">Next</button>
+                    <Button variant="outlined" type="submit" >Next</Button>
                 </form>
             </Route>
-            <Link to="/understanding">Back</Link>
+            <Link underline="hover" href="#/understanding">Back</Link>
         </Router>
 
     )

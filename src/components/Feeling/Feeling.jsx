@@ -1,9 +1,11 @@
 // import axios from 'axios';
 import React from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { useState } from "react"
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 // create onclicks that add to state variable, dispatch variable to reducer
 
@@ -44,14 +46,15 @@ function Feeling() {
             <Route path='/' exact>
                 <form onSubmit={(event) => dispatchFeeling(event)}>
                     <h3>How are you feeling today?</h3>
-                    <input
+                    <TextField
+                        size="small"
                         type="number" min="0" max="10"
                         placeholder="Feeling?"
                         onChange={addFeeling}
                         required
                     />
                     {/* <Link to="/understanding"> */}
-                    <button type="submit" >Next</button>
+                    <Button variant="outlined" type="submit" >Next</Button>
                     {/* </Link> */}
                 </form>
 

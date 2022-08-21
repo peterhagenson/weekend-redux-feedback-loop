@@ -1,8 +1,11 @@
 import React from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
 
 
 
@@ -37,11 +40,11 @@ function Comments() {
             <Route path="/comments" exact>
                 <form onSubmit={(event) => dispatchComments(event)}>
                     <h3>Any comments you want to leave?</h3>
-                    <input type="text" placeholder="Comments?" onChange={addComments} />
-                    <button type="submit">Next</button>
+                    <TextField type="text" size="small" placeholder="Comments?" onChange={addComments} />
+                    <Button variant="outlined" type="submit" >Next</Button>
                 </form>
             </Route>
-            <Link to="/support">Back</Link>
+            <Link underline="hover" href="#/support">Back</Link>
         </Router>
     )
 }
