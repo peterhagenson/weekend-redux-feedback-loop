@@ -43,13 +43,13 @@ function Review() {
     return (
         <Router>
             <Route path="/review" exact>
-                <Card sx={{ width: 500 }} className="card">
+                <Card sx={{ width: 500, mb: 4 }} className="card">
                     <CardContent>
                         <h1>Review Your Feedback</h1>
-                        <h1>Feeling: {surveyResponse.feeling.feeling}</h1>
-                        <h1>Understanding: {surveyResponse.understanding.understanding}</h1>
-                        <h1>Support: {surveyResponse.support.support}</h1>
-                        <h1>Comments: {surveyResponse.comments.comments}</h1>
+                        <h2>Feeling: {surveyResponse.feeling.feeling}</h2>
+                        <h2>Understanding: {surveyResponse.understanding.understanding}</h2>
+                        <h2>Support: {surveyResponse.support.support}</h2>
+                        <h2>Comments: {surveyResponse.comments.comments}</h2>
                         <Button onClick={toServer} variant="outlined" type="submit" >Next</Button>
                     </CardContent>
                 </Card>

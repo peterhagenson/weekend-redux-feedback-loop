@@ -2,13 +2,18 @@ body {
   font-family: "Roboto";
 }
 
+:root {
+  background-color: #c8e6c9
+}
 
 .App {
   text-align: center;
+  
 }
 
 .App-header {
-  background-color: #033076;
+  /* background-color: #033076; */
+  background-color: #ffc107;
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -29,10 +34,22 @@ h4 {
 
 .card {
   margin: auto;
+  margin-top: 50px;
 }
 
 .navLink {
   padding: 25px;
+}
+
+h1, h3, h4 { 
+  color: #2e7d32}
+
+Button {
+  margin-left: 15px;
+}
+
+h2 {
+  color: #388e3c
 }
 
 

@@ -51,7 +51,7 @@ function Understanding() {
 
         <Router>
             <Route path='/understanding' exact>
-                <Card sx={{ width: 300 }} className="card">
+                <Card sx={{ width: 500, mb: 4 }} className="card">
                     <CardContent>
                         <form onSubmit={(event) => dispatchUnderstanding(event)}>
                             <h3>How well are you understanding the content?</h3>
@@ -63,7 +63,7 @@ function Understanding() {
                                 // value={feeling}
                                 onChange={addUnderstanding}
                             />
-                            <Button variant="outlined" type="submit" >Next</Button>
+                            <Button variant="outlined" sx={{ m: 2 }} type="submit" >Next</Button>
                         </form>
                     </CardContent>
                 </Card>

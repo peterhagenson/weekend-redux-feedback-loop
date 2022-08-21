@@ -9,6 +9,20 @@ import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Rating from '@mui/material/Rating';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#388e3c',
+            spacing: 4,
+
+        },
+        secondary: {
+            main: '#ffc107',
+        },
+    },
+});
 
 // create onclicks that add to state variable, dispatch variable to reducer
 
@@ -56,11 +70,12 @@ function Feeling() {
         <Router>
 
             <Route path='/' exact>
-                <Card sx={{ width: 300 }} className="card">
-                    <CardContent >
-                        <form onSubmit={(event) => dispatchFeeling(event)}>
-                            <h3>How are you feeling today?</h3>
-                            {/* <TextField
+                <ThemeProvider theme={theme}>
+                    <Card sx={{ width: 500 }} variant="outlined" className="card">
+                        <CardContent >
+                            <form onSubmit={(event) => dispatchFeeling(event)}>
+                                <h3>How are you feeling today?</h3>
+                                {/* <TextField
                                 size="small"
                                 type="number" min="0" max="10"
                                 label="Feeling?"
@@ -68,19 +83,21 @@ function Feeling() {
                                 onChange={addFeeling}
                                 required
                             /> */}
-                            <Rating
-                                name="simple-controlled"
-                                max={5}
-                                // value={feeling}
-                                onChange={addFeeling}
-                            />
+                                <Rating
+                                    name="simple-controlled"
+                                    max={5}
+                                    // value={feeling}
+                                    onChange={addFeeling}
+                                />
 
 
-                            <Button variant="outlined" type="submit" >Next</Button>
+                                <Button sx={{ m: 2 }} variant="outlined" type="submit" >Next</Button>
 
-                        </form>
-                    </CardContent>
-                </Card >
+
+                            </form>
+                        </CardContent>
+                    </Card >
+                </ThemeProvider>
             </Route>
 
         </Router >

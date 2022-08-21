@@ -40,7 +40,7 @@ function Support() {
 
         <Router>
             <Route path="/support" exact>
-                <Card sx={{ width: 300 }} className="card">
+                <Card sx={{ width: 500, mb: 4 }} className="card">
                     <CardContent>
                         <form onSubmit={(event) => dispatchSupport(event)}>
                             <h3>How well are you being supported?</h3>
@@ -52,7 +52,7 @@ function Support() {
                                 // value={feeling}
                                 onChange={addSupport}
                             />
-                            <Button variant="outlined" type="submit" >Next</Button>
+                            <Button variant="outlined" sx={{ m: 2 }} type="submit" >Next</Button>
                         </form>
                     </CardContent>
                 </Card>
