@@ -32,12 +32,12 @@ function Admin() {
         })
     }
 
-    const deleteRow = () => {
+    const deleteRow = (id) => {
         // let key = event.target.id
 
         axios({
             method: 'DELETE',
-            url: `/admin/${key}`
+            url: `/admin/${id}`
         }).then((response) => {
             console.log('deleted!');
             getFeedback();
@@ -72,7 +72,7 @@ function Admin() {
                                     <TableCell align="right">{row.comments}</TableCell>
                                     <TableCell>
                                         {/* <Button onClick={deleteRow(key)}>Delete</Button> */}
-                                        <Button onClick={deleteRow}>Delete Row</Button>
+                                        <Button onClick={() => deleteRow(row.id)}>Delete Row</Button>
                                     </TableCell>
                                 </TableRow>
                             ))}
